@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Formulário</title>
+</head>
+<body>
+    <div> 
+        <!--isto é uma linha de comentário (html)-->
+        @*   outra linha de comentário(raiser- faz a gestao da interface da view)   *@
+
+        @* Formulário para perguntar aos utilizadores 
+            - nome
+            - idade
+            e depois fazer aparecer essa informação no ecrã     
+        *@
+
+    <h2> O meu formulário maravilhoso....</h2>
+
+    <form method="post">
+        @*o name serve para colocar os dados no servidor e o id é uma identificação- diferente, required é obrigatorio no client*@
+        qual o seu nome? <input type="text" name="nome" required="required" />  <br />
+        qual a sua idade? <input type="number" name="idade" required ="required" max ="120" min="0" /> <br />
+        <br />
+        <input type="submit" value="Enviar dados" />
+
+        @if (ViewBag.resposta != "")
+        {
+            // este if garante que o alert apenas aparece se a "resposta" tiver algum conteudo.ambiente cSharp.Ésta a ser processado no servidor.
+
+            <text>
+                <script>
+                alert("@ViewBag.resposta");
+                </script>
+            </text>
+
+        }
+
+    </form>
+
+    </div>
+</body>
+</html>
